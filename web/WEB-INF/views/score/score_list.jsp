@@ -8,6 +8,7 @@
     <title>Insert title here</title>
     <link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function(){
             $(".click").click(function(){
@@ -53,11 +54,8 @@
         <li><a href="#">基本内容</a></li>
     </ul>
 </div>
-
 <div class="rightinfo">
-
     <div class="tools">
-
         <ul class="toolbar">
             <li class="click"><span><img src="${pageContext.request.contextPath}/images/t01.png" /></span>添加</li>
             <li class="click"><span><img src="${pageContext.request.contextPath}/images/t02.png" /></span>修改</li>
@@ -73,21 +71,37 @@
         <tr>
             <th><input name="" type="checkbox" value="" checked="checked"/></th>
             <th>编号<i class="sort"><img src="${pageContext.request.contextPath}/images/px.gif" /></i></th>
-            <th>课程名</th>
-            <th>任课教师</th>
+            <th>学号</th>
+            <th>姓名</th>
+            <th>课程</th>
+            <th>教师</th>
+            <th>成绩</th>
             <th>操作</th>
+            <%--
+                TODO 后续完成
+            <%
+                Object loginRole = session.getAttribute("loginRole");
+                if ("1".equals(loginRole)) {
+            %>
+            <th>操作</th>
+            <%
+                }
+            %>--%>
         </tr>
         </thead>
         <tbody>
-            <c:forEach var="courseInfo" items="${requestScope.courseList}">
+            <c:forEach var="scoreInfo" items="${requestScope.scoreList}">
                 <tr>
-                    <td><input name="sign" type="checkbox" value="" /></td>
-                    <td>${courseInfo.id}</td>
-                    <td>${courseInfo.cname}</td>
-                    <td>${courseInfo.teacher.tname}</td>
+                    <td><input name="" type="checkbox" value="" /></td>
+                    <td>${scoreInfo.id}</td>
+                    <td>${scoreInfo.stu.stuno}</td>
+                    <td>${scoreInfo.stu.stuname}</td>
+                    <td>${scoreInfo.course.cname}</td>
+                    <td>${scoreInfo.course.teacher.tname}</td>
+                    <td>${scoreInfo.score}</td>
                     <td>
-                        <a href="/updateCourseInfoServlet?courseId=${courseInfo.id}" class="tablelink">修改</a>
-                        <a href="/deleteCourseInfoServlet?courseId=${courseInfo.id}" class="tablelink"> 删除</a>
+                        <a href="/updateScoreInfoServlet?scoreId=${scoreInfo.id}" class="tablelink">修改</a>
+                        <a href="#" class="tablelink"> 删除</a>
                     </td>
                 </tr>
             </c:forEach>

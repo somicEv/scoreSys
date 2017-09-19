@@ -14,12 +14,13 @@ import java.io.IOException;
 public class UpdateCourseInfoServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         // 查询相应的教师
         String tid = request.getParameter("tid");
         TeacherService teacherService = new TeacherService();
         Teacher teacherInfo = teacherService.getTeacherInfo(Integer.parseInt(tid));
         String cname = request.getParameter("cname");
-        String courseId = request.getParameter("courseId");
+        String courseId = request.getParameter("id");
         Course course = new Course();
         course.setCname(cname);
         course.setId(Integer.parseInt(courseId));

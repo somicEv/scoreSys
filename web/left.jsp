@@ -63,14 +63,14 @@ $(function(){
         <li><cite></cite><a href="/showTeacherInfo" target="rightFrame">教师列表</a><i></i></li>
         <li><cite></cite><a href="/addTeacherInfo" target="rightFrame">添加教师</a><i></i></li>
         <li><cite></cite><a href="/showCourseInfoServlet" target="rightFrame">课程列表</a><i></i></li>
-        <li><cite></cite><a href="WEB-INF/views/course/course_add.html" target="rightFrame">添加课程</a><i></i></li>
+        <li><cite></cite><a href="/addCourseInfoServlet" target="rightFrame">添加课程</a><i></i></li>
         </ul>
     </dd> 
     
     
     <dd><div class="title"><span><img src="images/leftico03.png" /></span>成绩管理</div>
     <ul class="menuson">
-        <li><cite></cite><a href="WEB-INF/views/score/score_list.html" target="rightFrame">成绩列表</a><i></i></li>
+        <li><cite></cite><a href="/showScoreInfoServlet" target="rightFrame">成绩列表</a><i></i></li>
         <li><cite></cite><a href="WEB-INF/views/score/score_add.html" target="rightFrame">添加成绩</a><i></i></li>
     </ul>    
     </dd>  
