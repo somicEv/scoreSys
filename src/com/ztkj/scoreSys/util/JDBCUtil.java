@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class JDBCUtil {
 	private static final String DRIVER = "com.mysql.jdbc.Driver";
-	private static final String URL = "jdbc:mysql://localhost:3306/web_design?characterEncoding=utf-8";
+	private static final String URL = "jdbc:mysql://localhost:3306/webdesign?characterEncoding=utf-8";
 	private static final String USERNAME = "root";
 	private static final String PWD = "";
 	
