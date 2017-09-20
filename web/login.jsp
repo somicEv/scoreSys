@@ -99,7 +99,7 @@ bgColor=#0E5981>
         <TR>
           <TD id=PageGlobalContainer
           style="PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; PADDING-TOP: 0px; HEIGHT: 100%"><!-- === * Begin Content * === -->
-            <FORM id=Form1 name=Form1 action="${pageContext.request.contextPath}/server_pages/login_server.jsp"
+            <FORM id=Form1 name=Form1 action="/loginServlet"
             method="post">
             <TABLE height="100%" width="100%" align=center border=0>
               <TBODY>

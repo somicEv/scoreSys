@@ -107,7 +107,7 @@ public class ScoreDaoDaoImpl implements IScoreDao {
     public boolean addScore(Score score) {
         try {
             con = JDBCUtil.getConnection();
-            String sql = "insert into t_score values(seq_score.nextval, ?,?,?)";
+            String sql = "insert into t_score (sid, cid, score) values(?,?,?)";
             pstm = con.prepareStatement(sql);
             pstm.setInt(1, score.getStu().getId());
             pstm.setInt(2, score.getCourse().getId());
@@ -132,8 +132,7 @@ public class ScoreDaoDaoImpl implements IScoreDao {
 
     @Override
     public boolean updateScore(Score score) {
-        Connection con = null;
-        PreparedStatement pstm = null;
+
         try {
             con = JDBCUtil.getConnection();
             String sql = "update t_score set sid=?,cid=?,score=? where id=?";
@@ -162,8 +161,6 @@ public class ScoreDaoDaoImpl implements IScoreDao {
 
     @Override
     public boolean delScore(int id) {
-        Connection con = null;
-        PreparedStatement pstm = null;
         try {
             con = JDBCUtil.getConnection();
             String sql = "delete from t_score where id=?";

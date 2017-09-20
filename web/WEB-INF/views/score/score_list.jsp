@@ -101,7 +101,7 @@
                     <td>${scoreInfo.score}</td>
                     <td>
                         <a href="/updateScoreInfoServlet?scoreId=${scoreInfo.id}" class="tablelink">修改</a>
-                        <a href="#" class="tablelink"> 删除</a>
+                        <a href="/deleteScoreInfoServlet?scoreId=${scoreInfo.id}" class="tablelink"> 删除</a>
                     </td>
                 </tr>
             </c:forEach>

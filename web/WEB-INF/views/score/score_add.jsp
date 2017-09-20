@@ -1,4 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -29,34 +32,32 @@
     <li><a href="#">表单</a></li>
     </ul>
     </div>
-    
+
     <div class="formbody">
-    
+
     <div class="formtitle"><span>基本信息</span></div>
     <form action="" method="post">
     <ul class="forminfo">
     <li><label>姓名</label>
-        <div class="fleft">
-        <select name="" class="select2" style="width: 167px;">
-            <option value="01">张三</option>
-            <option value="02">李四</option>
-            <option value="03">王五</option>
-            <option value="04">赵六</option>
-        </select>
-        </div></li>
-    <li><label>课程</label>
-        <div class="fleft">
-            <select name="" class="select2" style="width: 167px;">
-                <option value="01">高数</option>
-                <option value="02">软件技术</option>
-                <option value="03">计算机网络</option>
-                <option value="04">编译原理</option>
-                <option value="05">英语</option>
+        <div class="">
+            <select name="studentId" class="" style="width: 167px; opacity: 100;">
+                <c:forEach var="student" items="${requestScope.studentList}">
+                    <option value="${student.id}">${student.stuname}</option>
+                </c:forEach>
             </select>
         </div>
     </li>
-    <li><label>成绩</label><input name="" type="text" class="dfinput" /></li>
-    <li><label>&nbsp;</label><input name="" type="button" class="btn" value="确认保存"/></li>
+    <li><label>课程</label>
+        <div class="">
+            <select name="courseId" class="" style="width: 167px; opacity: 100;" >
+                <c:forEach var="course" items="${requestScope.courseList}">
+                    <option value="${course.id}">${course.cname}</option>
+                </c:forEach>
+            </select>
+        </div>
+    </li>
+    <li><label>成绩</label><input name="score" type="text" class="dfinput" /></li>
+    <li><label>&nbsp;</label><input name="" type="submit" class="btn" value="确认保存"/></li>
     </ul>
     </form>
     </div>

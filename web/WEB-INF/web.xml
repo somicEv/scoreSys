@@ -68,6 +68,30 @@
         <servlet-name>UpdateScoreInfoServlet</servlet-name>
         <servlet-class>com.ztkj.scoreSys.servlet.score.UpdateScoreInfoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteScoreInfoServlet</servlet-name>
+        <servlet-class>com.ztkj.scoreSys.servlet.score.DeleteScoreInfoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddScoreInfoServlet</servlet-name>
+        <servlet-class>com.ztkj.scoreSys.servlet.score.AddScoreInfoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogingServlet</servlet-name>
+        <servlet-class>com.ztkj.scoreSys.servlet.LogingServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogingServlet</servlet-name>
+        <url-pattern>/loginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddScoreInfoServlet</servlet-name>
+        <url-pattern>/addScoreInfoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteScoreInfoServlet</servlet-name>
+        <url-pattern>/deleteScoreInfoServlet</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>UpdateScoreInfoServlet</servlet-name>
         <url-pattern>/updateScoreInfoServlet</url-pattern>
